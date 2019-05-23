@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Book Search</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1 id="welcome">Welcome to book list</h1>
+
+        <!-- data binding using the v-model directive -->
+        
+        <form v-on:submit.prevent="newSearch" >
+            <input type="text" v-model="searchInput"> 
+            <button type="submit">search</button>
+        </form>
+        <p id= "please">TESTER</p>
+        <button>Show Favorites</button>
+        <button>Show Search</button>
+        <div v-if="loading">
+            <p>Loading...</p>
+        </div>
+        <ul>
+            <!-- v-for iterates over a list of items and we know that todos is in our data object -->
+            <li v-for="item in bookResults" >
+                <label >Title: {{ item.title }}, Author: {{ item.author }}, Publish Date: {{ item.PD }}</label>
+                <!-- <label>{{ item.text }}</label> -->
+            </li>
+        </ul>
+
+        <div id="displayResults">
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script text="type/javascript" src="./script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Book Search</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Welcome to book list</h1>
+
+        <p>seach bar:</p>
+        <input type="text" v-model="searchInput">
+        <p>The input is: {{ searchInput }}.</p>
+
+        <form v-on:submit.prevent="searches">
+            <input type="text" v-model="searchInput"> 
+            <button type="submit">find</button>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+
+</html> -->

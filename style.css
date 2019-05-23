@@ -1,0 +1,12 @@
+
+body{
+    background: rgb(255, 176, 255)
+}
+
+#welcome{
+
+    text-align: center;
+    padding: 5%;
+    background:rgb(80, 25, 80);
+    color: white;
+}
