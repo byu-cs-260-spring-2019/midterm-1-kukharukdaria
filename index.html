@@ -17,12 +17,13 @@
             <input type="text" v-model="searchInput"> 
             <button type="submit">search</button>
         </form>
-        <p id= "please">TESTER</p>
+        <p id= "please">Results Display Here</p>
         <button>Show Favorites</button>
         <button>Show Search</button>
         <div v-if="loading">
             <p>Loading...</p>
         </div>
+        <div id= "faves"></div>
         <ul>
             <!-- v-for iterates over a list of items and we know that todos is in our data object -->
             <li v-for="item in bookResults" >

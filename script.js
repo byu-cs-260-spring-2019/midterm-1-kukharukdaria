@@ -17,6 +17,34 @@ let app = new Vue({
         loading: false,
     },
     methods: {
+        async addFave(r){
+
+            const url = "http://openlibrary.org/search.json?q=" + this.searchInput;
+
+            json = 'temp'
+            try {
+                this.loading = true;
+                var response = await fetch(url);
+                console.log("response= ", response);
+                json = await response.json();
+                console.log(json);
+                this.loading = false;
+            } catch {
+                console.log(error);
+            }
+
+            printMe = document.getElementById("please").innerHTML;
+
+            printMe += "Tittle: ";
+            printMe += json.docs[r].title_suggest;
+            printMe += " Auhor: ";
+            printMe += json.docs[r].author_name[0];
+            printMe += " Published: ";
+            printMe += json.docs[r].publish_date[0];
+
+            document.getElementById("please").innerHTML= printMe;
+
+        },
         async newSearch(){
             console.log("NEW SEARCH: ", this.searchInput);
 
@@ -66,9 +94,10 @@ let app = new Vue({
                                 "A: ", json.docs[r].author_name[0],
                                 "P: ", json.docs[r].publish_date[0])
                     results += "<li>";
+                    results += '<button v-on:click="addFave(' + r + ')">Make Favorite</button>';
                     results += "Tittle: ";
                     results += json.docs[r].title_suggest;
-                    results += " Author: ";
+                    results += " Auhor: ";
                     results += json.docs[r].author_name[0];
                     results += " Published: ";
                     results += json.docs[r].publish_date[0];
