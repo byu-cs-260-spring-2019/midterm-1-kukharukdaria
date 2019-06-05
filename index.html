@@ -17,8 +17,8 @@
             <input type="text" v-model="searchInput"> 
             <button type="submit">search</button>
         </form>
-        <button>Show Favorites</button>
-        <button>Show Search</button>
+        <button v-on:click="showFaves()">Show Favorites</button>
+        <button v-on:click="showSearch()">Show Search</button>
         <p id= "please">Results Display Here</p>
         
         <div v-if="loading">
@@ -34,6 +34,7 @@
         </ul> -->
 
         <div id="displayResults">
+                
         </div>
 
     </div>
