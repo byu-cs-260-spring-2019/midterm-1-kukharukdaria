@@ -1,4 +1,5 @@
-my firebase link: https://tester1-253fc.firebaseapp.com/
+my firebase link: https://midterm1-f121d.firebaseapp.com/
+note: the only thing that I can't get to work with the favorited button is the function that makes a book the favorite, when I manually go in to make a book a favorite it works to display the favorties that are made. The function that the button is supposed to call isn't being called is the issue. 
 
 # CS 260  Midterm 1
 
